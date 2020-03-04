@@ -2,16 +2,16 @@ import { App } from 'reapex'
 
 import plugin from '../src'
 
-describe('modal plugin', () => {
+describe('plugin', () => {
   let app: App
 
   beforeEach(() => {
     app = new App()
-    app.use(plugin, '@@modals')
+    app.use(plugin)
     app.createStore()
   })
 
-  it('should show modal', () => {
+  it('should be truthy', () => {
     expect(app).toBeTruthy()
   })
 })
