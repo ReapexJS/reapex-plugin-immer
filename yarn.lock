@@ -3013,10 +3013,15 @@ ignore@^4.0.3, ignore@^4.0.6:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
 
-immutable-state-creator@~1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/immutable-state-creator/-/immutable-state-creator-1.2.3.tgz#df25a6b5d86a7751e6c015f578d6804c57bfee18"
-  integrity sha512-iYzLRgB4yerpV7fzAQtIXDP5xW1YbwmNQruY10PgzqlQPlDlzq4GcUaIZhSkCy3GfSVXDjcyvB9di/cx2LYv1A==
+immer@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-7.0.3.tgz#d9afe723ed29b3b03e1c74a7fad9d1181aced078"
+  integrity sha512-1f/jaF27WVb3X5Tk1AmOYZE+JZgMl50pIS5I8e/Je+HpYHjHwPfzm6dTEvOAUi6jq+/anFXev7agoOgJaL5RFw==
+
+immutable-state-creator@~1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/immutable-state-creator/-/immutable-state-creator-1.2.4.tgz#35fdfbd31d3bd7d14e574bc2a2c218da82ffb677"
+  integrity sha512-a+rAJe5PA207b4F8q8Oti8GkhzZEjn16bHjobGDUSAa2sElcwrWX4vlxVm0c53OJaUN6fhG4OTYvORb+GK7CVQ==
 
 immutable@^4.0.0-rc.12:
   version "4.0.0-rc.12"
@@ -5270,12 +5275,12 @@ realpath-native@^1.1.0:
   dependencies:
     util.promisify "^1.0.0"
 
-reapex@0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/reapex/-/reapex-0.11.1.tgz#08b77e7001e7767118f27fc0abf80528b1299edf"
-  integrity sha512-VWjjDCySHM1CSgnJiEzV8CMSnWv5siAttMEsVYets7Rya8M89GdRn65Ty7f1MeWX3VYms5Zl8XSCuC1r/4mkmw==
+reapex@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/reapex/-/reapex-1.0.0-beta.1.tgz#58361cd872fade47a74144e31ba968775f7240a8"
+  integrity sha512-NtIjT6qf2a0J0s95ris8FKHgyNyMmwgCRQZcq4hXaXsiBirfVnmZe/MXjou7HhOTPhQE6FI67SFY/pnq8YA1dQ==
   dependencies:
-    immutable-state-creator "~1.2.3"
+    immutable-state-creator "~1.2.4"
     reducer-tools "^1.0.0"
     redux-immutable "^4.0.0"
 

@@ -1,3 +1,3 @@
-import plugin from './template.plugin'
+import plugin from './immer.plugin'
 
 export default plugin

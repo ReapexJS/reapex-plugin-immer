@@ -1,10 +1,32 @@
-### Reapex plugin template
+### Reapex immer plugin
 
 ```typescript
 import { App } from 'reapex'
-import plugin from 'reapex-plugin-template'
+import immer from 'reapex-plugin-immer'
 
 const app = new App()
 
 // 1. register the plugin
-app.use(plugin)
+app.use(immer)
+
+// 2. in mutations, we can expect the state it receives as an immer draft object
+```typescript
+interface TodoState {
+  todos: string[]
+}
+
+const initial: TodoState = {
+  todos: [],
+}
+
+const TodoModel = app.model('todos', initial)
+
+const [mutations] = TodoModel.mutations({
+  add: (todo: string) => state => {
+    // the state here is an immer draft
+    state.todos.push(todo)
+    return state
+  },
+})
+
+```
