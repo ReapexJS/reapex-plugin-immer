@@ -10,7 +10,6 @@ const app = new App()
 app.use(immer)
 
 // 2. in mutations, we can expect the state it receives as an immer draft object
-```typescript
 interface TodoState {
   todos: string[]
 }
