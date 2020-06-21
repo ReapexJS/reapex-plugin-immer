@@ -1,6 +1,6 @@
 {
   "name": "reapex-plugin-immer",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "use immer for redux state",
   "main": "lib/index.js",
   "scripts": {

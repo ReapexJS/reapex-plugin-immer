@@ -25,14 +25,14 @@ const [mutations] = TodoModel.mutations({
 
 const TodoComponent = () => {
   const dispatch = useDispatch()
-  const todos = useSelector(TodoModel.selectors.todos)
+  const todos = useSelector(TodoModel.selectors.self)
   const [state, setState] = useState('')
   return (
     <div>
       <input value={state} onChange={e => setState(e.target.value)} />
       <button onClick={() => dispatch(mutations.add(state))}>Add</button>
       <ul>
-        {todos.map(t => (
+        {todos.todos.map(t => (
           <li>{t}</li>
         ))}
       </ul>
@@ -40,9 +40,38 @@ const TodoComponent = () => {
   )
 }
 
+const CounterModel = app.model('Counter', { total: 0 })
+const [counterMutations] = CounterModel.mutations({
+  increase: () => s => {
+    s.total = s.total + 1
+    return s
+  },
+  decrease: () => s => {
+    s.total = s.total - 1
+    return s
+  },
+})
+
+const Counter = () => {
+  const dispatch = useDispatch()
+  const counter = useSelector(CounterModel.selectors.self)
+  return (
+    <div>
+      <button onClick={() => dispatch(counterMutations.decrease())}>
+        decrease
+      </button>
+      {counter.total}
+      <button onClick={() => dispatch(counterMutations.increase())}>
+        increase
+      </button>
+    </div>
+  )
+}
+
 render(
   <Provider store={store}>
     <TodoComponent />
+    <Counter />
   </Provider>,
   document.getElementById('root')
 )
