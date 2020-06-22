@@ -7,7 +7,7 @@ import immer from 'reapex-plugin-immer'
 const app = new App()
 
 // 1. register the plugin
-app.use(immer)
+app.plugin(immer)
 
 // 2. in mutations, we can expect the state it receives as an immer draft object
 interface TodoState {
