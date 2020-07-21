@@ -3018,12 +3018,7 @@ immer@^7.0.3:
   resolved "https://registry.yarnpkg.com/immer/-/immer-7.0.3.tgz#d9afe723ed29b3b03e1c74a7fad9d1181aced078"
   integrity sha512-1f/jaF27WVb3X5Tk1AmOYZE+JZgMl50pIS5I8e/Je+HpYHjHwPfzm6dTEvOAUi6jq+/anFXev7agoOgJaL5RFw==
 
-immutable-state-creator@~1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/immutable-state-creator/-/immutable-state-creator-1.2.4.tgz#35fdfbd31d3bd7d14e574bc2a2c218da82ffb677"
-  integrity sha512-a+rAJe5PA207b4F8q8Oti8GkhzZEjn16bHjobGDUSAa2sElcwrWX4vlxVm0c53OJaUN6fhG4OTYvORb+GK7CVQ==
-
-immutable@^4.0.0-rc.12:
+immutable@^4.0.0-rc.1, immutable@^4.0.0-rc.12:
   version "4.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
   integrity sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
@@ -4174,9 +4169,9 @@ lodash.sortby@^4.7.0:
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
 lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.3:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -5275,19 +5270,13 @@ realpath-native@^1.1.0:
   dependencies:
     util.promisify "^1.0.0"
 
-reapex@^1.0.0-beta.1:
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/reapex/-/reapex-1.0.0-beta.1.tgz#58361cd872fade47a74144e31ba968775f7240a8"
-  integrity sha512-NtIjT6qf2a0J0s95ris8FKHgyNyMmwgCRQZcq4hXaXsiBirfVnmZe/MXjou7HhOTPhQE6FI67SFY/pnq8YA1dQ==
+reapex@^1.0.0-beta.2:
+  version "1.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/reapex/-/reapex-1.0.0-beta.5.tgz#d6c333c355078e836f9dbfb423cb03702bc45395"
+  integrity sha512-ZIQtoDvlmJwZeDTAvdzvqrSv/xT/4x99JHhk9WHsFmdVxbOcV4ulGBRGIMfzTcU+lttuy7IzUeWuakhkNxzmbw==
   dependencies:
-    immutable-state-creator "~1.2.4"
-    reducer-tools "^1.0.0"
+    immutable "^4.0.0-rc.1"
     redux-immutable "^4.0.0"
-
-reducer-tools@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/reducer-tools/-/reducer-tools-1.0.0.tgz#57a43861f8828b770278024516523ef4c74244c6"
-  integrity sha512-aWRKn2TJQ99cYP2b4Vot9xRwmzuX9W2Y+2mEExm5PqJR/H55vOXsr1id8LwUdmnT7a6NPNpe/dgiNKUBCFPRkw==
 
 redux-immutable@^4.0.0:
   version "4.0.0"
