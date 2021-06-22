@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
-import { render } from 'react-dom'
-import { Provider, useDispatch, useSelector } from 'react-redux'
 
 import app from './app'
-
-const store = app.createStore()
 
 interface TodoState {
   todos: string[]
@@ -17,22 +13,21 @@ const initial: TodoState = {
 const TodoModel = app.model('todos', initial)
 
 const [mutations] = TodoModel.mutations({
-  add: (todo: string) => s => {
+  add: (todo: string) => (s) => {
     s.todos.push(todo)
     return s
   },
 })
 
 const TodoComponent = () => {
-  const dispatch = useDispatch()
-  const todos = useSelector(TodoModel.selectors.self)
+  const todos = TodoModel.useState((s) => s)
   const [state, setState] = useState('')
   return (
     <div>
-      <input value={state} onChange={e => setState(e.target.value)} />
-      <button onClick={() => dispatch(mutations.add(state))}>Add</button>
+      <input value={state} onChange={(e) => setState(e.target.value)} />
+      <button onClick={() => mutations.add(state)}>Add</button>
       <ul>
-        {todos.todos.map(t => (
+        {todos.todos.map((t) => (
           <li>{t}</li>
         ))}
       </ul>
@@ -42,36 +37,34 @@ const TodoComponent = () => {
 
 const CounterModel = app.model('Counter', { total: 0 })
 const [counterMutations] = CounterModel.mutations({
-  increase: () => s => {
+  increase: () => (s) => {
     s.total = s.total + 1
     return s
   },
-  decrease: () => s => {
+  decrease: () => (s) => {
     s.total = s.total - 1
     return s
   },
 })
 
 const Counter = () => {
-  const dispatch = useDispatch()
-  const counter = useSelector(CounterModel.selectors.self)
+  const counter = CounterModel.useState((s) => s)
   return (
     <div>
-      <button onClick={() => dispatch(counterMutations.decrease())}>
-        decrease
-      </button>
+      <button onClick={counterMutations.decrease}>decrease</button>
       {counter.total}
-      <button onClick={() => dispatch(counterMutations.increase())}>
-        increase
-      </button>
+      <button onClick={counterMutations.increase}>increase</button>
     </div>
   )
 }
 
-render(
-  <Provider store={store}>
-    <TodoComponent />
-    <Counter />
-  </Provider>,
-  document.getElementById('root')
-)
+const Root = () => {
+  return (
+    <>
+      <TodoComponent />
+      <Counter />
+    </>
+  )
+}
+
+app.render(Root, document.getElementById('root'))
