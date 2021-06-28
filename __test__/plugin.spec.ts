@@ -14,15 +14,15 @@ describe('immer plugin', () => {
   it('should update state object reference with object property value assignment', () => {
     const model = app.model('counter', { total: 0 })
     const [mutations] = model.mutations({
-      increase: () => s => {
+      increase: () => (s) => {
         s.total = s.total + 1
         return s
       },
     })
 
-    const beforeState = model.selectors.self(app.store.getState())
-    app.store.dispatch(mutations.increase())
-    const afterState = model.selectors.self(app.store.getState())
+    const beforeState = model.getState()
+    mutations.increase()
+    const afterState = model.getState()
 
     expect(beforeState).not.toBe(afterState)
     expect(beforeState).not.toEqual(afterState)
@@ -33,15 +33,15 @@ describe('immer plugin', () => {
   it('should update state object reference with array push', () => {
     const model = app.model('languages', { languages: Array<string>() })
     const [mutations] = model.mutations({
-      add: (language: string) => s => {
+      add: (language: string) => (s) => {
         s.languages.push(language)
         return s
       },
     })
 
-    const beforeState = model.selectors.self(app.store.getState())
-    app.store.dispatch(mutations.add('English'))
-    const afterState = model.selectors.self(app.store.getState())
+    const beforeState = model.getState()
+    mutations.add('English')
+    const afterState = model.getState()
 
     expect(beforeState).not.toBe(afterState)
     expect(beforeState).not.toEqual(afterState)
